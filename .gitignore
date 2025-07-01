@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+# You might use venv, virtualenv, or poetry/pdm specific venvs
+venv/
+.venv/
+env/
+.env/
+.Python
+# For Poetry
+.poetry/
+# For PDM
+.pdm-python/
+.pdm-build/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp # Vim swap files
+*.swo # Vim swap files
+*~    # Emacs backup files
+
+# OS generated files
+.DS_Store # macOS
+.localized # macOS
+.Trashes # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+pyc.pyc # PyCharm temporary file
+
+# IDE specific files
+.idea/ # IntelliJ / PyCharm
+.vscode/ # VS Code settings (consider ignoring only user-specific settings like .vscode/settings.json)
+*.sublime-project
+*.sublime-workspace
+.project
+.directory
+
+# IPython / Jupyter Notebook
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+*.sqlite3 # If using SQLite for notebooks/local testing
+*.db # Other database files
+
+# Environment variables and sensitive data (CRITICAL for API keys, etc.)
+.env # Your local environment variables file (contains API keys, etc.)
+.env.*.local # For different local environments
+config.ini.local # Or any local config file with sensitive data
+secrets.py # If you store secrets in a Python file (discouraged, use .env)
+
+# RAG specific ignores:
+# ---------------------
+
+# Downloaded or processed data (raw documents, processed chunks, etc.)
+# These files can be large and are usually derived from external sources
+# or processing steps, so they don't belong in Git.
+data/ # Or specific subdirectories, e.g., data/raw/, data/processed/
+downloads/ # If you download files for processing
+documents/ # If raw documents are stored here locally
+cache/ # Generic cache directories
+
+# Vector store indexes/databases
+# These can be very large and are typically rebuilt from your processed data.
+# Examples for common vector stores:
+chroma_db/ # ChromaDB
+.chroma/ # Another common ChromaDB dir
+faiss_index.bin # FAISS index files
+annoy_index/ # Annoy index files
+weaviate_data/ # Weaviate local data
+qdrant_data/ # Qdrant local data
+milvus_data/ # Milvus local data
+pinecone_data/ # Pinecone local data (if any local caches)
+lancedb_data/ # LanceDB data (often a directory)
+
+# Embeddings/processed data artifacts
+# Binary files or large pickle files resulting from embedding or chunking
+*.pkl
+*.bin
+*.npy
+*.safetensors # Common for ML models/embeddings
+*.pt # PyTorch saved models/tensors
+*.pth # PyTorch saved models/tensors
+*.onnx # ONNX format models
+
+# Large language models (if downloaded locally)
+# Don't commit large pre-trained models.
+models/ # General directory for downloaded models
+*.ckpt # Checkpoints
+*.h5 # Keras models
+*.keras # Keras models
+*.json # Model config JSONs that might be generated (but keep source config)
+
+# Output files from RAG runs (e.g., generated answers, evaluation reports)
+outputs/
+results/
+reports/
+generated_responses.txt
+evaluation_log.json
+
+# Streamlit cache (if using Streamlit for your RAG app UI)
+.streamlit/
