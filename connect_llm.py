@@ -15,7 +15,7 @@ def run():
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
 
     try:
-        response = llm.invoke("Just one word!. Between Ronaldo and Messi, which one is a better player?")
+        response = llm.invoke("What is GEN AI?")
         print(f"Response: {response.content}\n")
     except Exception as e:
         print(f"Error in Test: {e}\n")
