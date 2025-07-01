@@ -14,45 +14,10 @@ if not google_api_key:
 
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
 
-print("--- Test 1: Simple Text Generation ---")
 try:
-    response = llm.invoke("What is the capital of France?")
+    response = llm.invoke("Just one word!. Between Ronaldo and Messi, which one is a better player?")
     print(f"Response: {response.content}\n")
 except Exception as e:
-    print(f"Error in Test 1: {e}\n")
+    print(f"Error in Test: {e}\n")
 
-print("--- Test 2: Using a ChatPromptTemplate ---")
-try:
-    prompt = ChatPromptTemplate.from_messages(
-        [
-            ("system", "You are a helpful AI assistant."),
-            ("human", "Tell me a fun fact about the universe."),
-        ]
-    )
-    chain = prompt | llm
-    response = chain.invoke({})
-    print(f"Response: {response.content}\n")
-except Exception as e:
-    print(f"Error in Test 2: {e}\n")
-
-print("--- Test 3: Multimodal (Vision) Capability (Optional) ---")
-try:
-    llm_vision = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.5) 
-
-    image_url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-
-    message_with_image = HumanMessage(
-        content=[
-            {"type": "text", "text": "Describe this image."},
-            {"type": "image_url", "image_url": image_url},
-        ]
-    )
-
-    response_vision = llm_vision.invoke([message_with_image])
-    print(f"Vision Response: {response_vision.content}\n")
-
-except Exception as e:
-    print(f"Error in Test 3 (Multimodal): {e}")
-    print("Ensure you are using a multimodal model (e.g., 'gemini-1.5-flash' or 'gemini-pro-vision') and that the image URL is accessible.")
-
-print("--- Testing complete ---")
+print("Testing completed")
